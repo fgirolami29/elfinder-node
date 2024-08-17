@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/elfinder/2.1.65/css/elfinder.min.css"
+        />
+
+        <title>File Manager</title>
+    </head>
+    <body>
+        <div id="elfinder"></div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/elfinder/2.1.65/js/elfinder.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#elfinder').elfinder({
+                    url: '/connector', // Connector URL (Node.js)
+                    //startPathHash : 'l1_' + btoa('prova').replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '.').replace(/\.+$/, ''),
+                    //lang: 'it',
+                    startPathHash: 'v0_Lw',
+                    rememberLastDir: 'false',
+                    commands: [
+                        'open',
+                        'reload',
+                        'home',
+                        'up',
+                        'back',
+                        'forward',
+                        'getfile',
+                        'quicklook',
+                        'download',
+                        'search',
+                        'info',
+                        'view',
+                        'resize',
+                        'sort',
+                    ],
+                    themes: {
+                        'mt-darkblue':
+                            'https://robinn1.github.io/elFinder-Material-Theme/manifests/darkblue.json',
+                        'mt-gray':
+                            'https://robinn1.github.io/elFinder-Material-Theme/manifests/gray.json',
+                        'mt-light':
+                            'https://robinn1.github.io/elFinder-Material-Theme/manifests/light.json',
+                    },
+                    theme: 'mt-darkblue',
+                });
+            });
+        </script>
+    </body>
+</html>
